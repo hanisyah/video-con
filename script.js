@@ -65,6 +65,7 @@ function startWebRTC(isOfferer) {
   if (isOfferer) {
     pc.onnegotiationneeded = () => {
       pc.createOffer().then(localDescCreated).catch(onError);
+      
     }
   }
 
