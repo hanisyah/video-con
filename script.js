@@ -108,7 +108,7 @@ function startWebRTC(isOfferer) {
       );
     }
   });
-}
+} 
 
 function localDescCreated(desc) {
   pc.setLocalDescription(
