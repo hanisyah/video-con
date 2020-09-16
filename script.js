@@ -85,6 +85,7 @@ function startWebRTC(isOfferer) {
   if (isOfferer) {
     pc.onnegotiationneeded = () => {
       pc.createOffer().then(localDescCreated).catch(onError);
+      
     }
     dataChannel = pc.createDataChannel('chat');
     setupDataChannel();
