@@ -92,14 +92,45 @@
       font-size: 16px;
       cursor: pointer;
     }
+
+    .audio {
+      position: fixed;
+      top: 500px;
+      left: 30%;
+      transform: translateX(-50%);
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+    .screen {
+      position: fixed;
+      top: 480px;
+      left: 60%;
+      transform: translateX(-50%);
+      font-size: 16px;
+      color: rgba(0, 0, 0, 0.5);
+    }
+
+
   </style>
 </head>
 <body>
   
   <div class="copy">Video App</div>
-  <video id="localVideo" autoplay muted></video>
-  <video id="remoteVideo" autoplay></video>
+  <video id="localVideo" autoplay muted controls width="400" height="240"></video>
+  <video id="remoteVideo" autoplay controls width="400" height="240"></video>
+  <video autoplay muted controls id="screenShare" width="400" height="240"></video>
 
+  <div class="audio">
+    <br>
+    <button id="btn-start-recording">Start Recording</button>
+    <button id="btn-stop-recording" disabled>Stop Recording</button>
+    <button id="btn-release-microphone" disabled>Release Microphone</button>
+    <button id="btn-download-recording" disabled>Download</button>
+    <button id="btnStartStopScreenshare">Screen Share</button>
+    <hr>
+    <div><audio controls autoplay playsinline></audio></div>
+  </div>  
 
   <div class="content">
     <div class="messages">
@@ -117,7 +148,22 @@
       <div class="message__bubble"></div>
     </div>
   </template>
- 
+
+<!-- script -->
   <script src="script.js"></script>
+  <script src="https://www.webrtc-experiment.com/RecordRTC.js"></script>
+  <script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+  <script type='text/javascript' src='audioRecord.js'></script>
+  <script src="../nyobak_kuy/scripts/jquery-3.4.1.min.js"></script>
+  <script src="demo.js"></script>
+
+    <script>
+        $(function () {
+            
+            Demo.init();
+        });
+    </script>
+<!-- script -->
+
 </body>
 </html>
